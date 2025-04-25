@@ -115,8 +115,9 @@ Let's get started!
     In the script, we assigned the forward read to the value $1 which is a positional parameter. This is the first command-line argument you will provide when executing the script.
 
    The general format for submitting a job is:
-    
-    sbatch script.sh $argument1 $argument2
+
+   sbatch script.sh $argument1 $argument2
+
    In our case argument 1 is the forward read and argument 2 is the reverse read.
 
     ```bash
@@ -127,7 +128,7 @@ Let's get started!
     squeuemine
     ```
 
-    If you look at the slurm output file you will see a percentage breakdown of reads classified and unclassified
+    If you look at the slurm output file you will see a percentage breakdown of the classified and unclassified reads.
 
 5. **Run Bracken for abundance estimation**
 
