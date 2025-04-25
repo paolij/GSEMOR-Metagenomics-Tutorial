@@ -42,7 +42,6 @@ Let's get started!
     ```
 
     Make a folder for metagenomics and go into newly created folder
-    
     ```bash
     mkdir metagenomics
     cd metagenomics
