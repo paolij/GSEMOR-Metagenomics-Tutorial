@@ -64,13 +64,13 @@ Let's get started!
 
    HPG already has Kraken databases availalbe for use so no need to download them.
 
-    Let's write a script! 
+   Let's write a script! 
 
     ```bash
     nano kraken2.sh
     ```
 
-    You can copy this script and paste to your newly opened file. To save your script do Ctrl + O.
+    You can copy this script and paste it to your newly opened file. To save your script do Ctrl + O.
     ```bash
     #!/bin/bash
     #SBATCH --job-name=KRAKEN2
@@ -78,14 +78,14 @@ Let's get started!
     #SBATCH --time=24:00:00
     #SBATCH --nodes=1
     #SBATCH --cpus-per-task=1
-    #SBATCH --account=epi
-    #SBATCH --qos=epi-b
+    #SBATCH --account=<your account>
+    #SBATCH --qos=<your qos>
     #SBATCH --mail-user=<username>@ufl.edu
     #SBATCH --mail-type=ALL
     
     pwd; hostname; date
     
-    # Creating output directory
+    # Create output directory
     mkdir -p kraken_output
     
     # Load Kraken2 module
@@ -95,7 +95,7 @@ Let's get started!
     FWD=$1
     REV=$2
     
-    # Directory for Kraken2 database - replace with actual path
+    # Directory for Kraken2 database
     KRAKEN_DB_PATH="/data/reference/kraken2/minikraken2_v2_8GB_201904_UPDATE"
     
     # Extract the base name of the forward reads file (without path and extension)
@@ -114,7 +114,8 @@ Let's get started!
     To submit the job use sbatch. 
     In the script, we assigned the forward read to the value $1 which is a positional parameter. This is the first command-line argument you will provide when executing the script. The general format for submitting a job is:
     
-    sbatch script.sh $argument1
+    sbatch script.sh $argument1 $argument2
+   In our case argument 1 is the forward read and argument 2 is the reverse read.
 
     ```bash
     sbatch kraken2.sh 6_S6_L001.fwd_p.fq.gz 6_S6_L001.rv_p.fq.gz
@@ -126,7 +127,7 @@ Let's get started!
 
     If you look at the slurm output file you will see a percentage breakdown of reads classified and unclassified
 
-4. **Run Bracken for abundance estimation**
+5. **Run Bracken for abundance estimation**
 
     We will now use the output from Kraken2 as input for Bracken abundance estimation.
 
@@ -170,7 +171,7 @@ Let's get started!
     sbatch bracken.sh 6_S6_L001.fwd_p.fq.gz
     ```
 
-5. **Visualize Microbiome Classification and Abundance**
+6. **Visualize Microbiome Classification and Abundance**
 
     We will now make a Krona plots using the output from Bracken to visualize the microbiome composition of our data in a piechart format.
     
