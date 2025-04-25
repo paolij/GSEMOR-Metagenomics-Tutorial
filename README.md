@@ -1,28 +1,29 @@
 # UF Genomic Workshop
 # Metagenomic Classification Tutorial
 # Julia Paoli
-**Background**
 
-In this section on metagenomics for pathogen identification, we will investigate the viral and bacterial species present in sequencing data. This is an important initial step in an outbreak scenario or research study to identify and characterize which pathogens are present in your samples. 
+### **Background**
 
-The data we will analyze comes from a surveillance study of ticks from Mongolia. We collected *I. persulcatus* ticks (n = 1300) in May 2020. Viral RNA was extracted from cell cultures, converted to cDNA, and library prepped. We conducted whole-genome shotgun sequencing on the Illumina iSeq100 platform. To read more about this study the paper is [here](https://www.mdpi.com/2076-0817/13/12/1086).
+In this section on metagenomics for pathogen identification, we will investigate the viral and bacterial species present in sequencing data. This is an important initial step in an outbreak scenario to identify and characterize which pathogens are present in your samples. 
+
+The data we will analyze comes from a surveillance study of ticks collected in Mongolia. We collected *I. persulcatus* ticks (n = 1300) in May 2020. Viral RNA was extracted from cell cultures, converted to cDNA, and library prepped. We conducted whole-genome shotgun sequencing on the Illumina iSeq100 platform. To read more about this study the paper is [here](https://www.mdpi.com/2076-0817/13/12/1086).
 
 We will be submitting jobs to the HPG server using SLURM job scripts. For more information on submitting jobs check out this [website](https://help.rc.ufl.edu/doc/HPG_Scheduling). For good computing practices using HPG check [here](https://help.rc.ufl.edu/doc/HPG_Computation). 
 
 ⚠️ Warning: Ensure you are not running analyses on login nodes.
 
 
-**Kraken Metagenomic Pipeline**
+### **Kraken Metagenomic Pipeline**
 
 First, we will use the Kraken suite to classify, quantify, and visualize our metagenomic dataset following the steps outlined in [this paper](https://www.nature.com/articles/s41596-022-00738-y).
 
 1. Taxonomic classificiation: Kraken2
 2. Abundance Calculation: Bracken
-3. Microbiome visualization: KrakenTools and Pavian
+3. Microbiome visualization: KrakenTools
 
 Let's get started!
 
-1. **Connect to HiPerGator (HPG) server to run analysis**
+1. **Connect to HiPerGator (HPG) server to run analyses**
 
     Navigate to your preferred terminal and enter the following code:
 
@@ -47,14 +48,14 @@ Let's get started!
     cd metagenomics
     ```
 
-    Make two folders, one for scripts and one for outputs. This will help keep you organized.
+    Make two folders, one for scripts and one for inputs. This will help keep you organized.
 
     ```bash
     mkdir scripts
     mkdir input
     ```
 
-    Copy trimmed reads to input folder
+    At this point you should have trimmed your raw sequencing reads using Trimmomatic so our input will be the trimmed fastq files.
     ```bash
     cp *.gz input
     ```
@@ -62,7 +63,7 @@ Let's get started!
 3. **Run Kraken2 to classify metagenomic reads**
 
 
-    At this point you should have trimmed your raw sequencing reads using Trimmomatic so our input will be the trimmed fastq files. HPG already has Kraken databases availalbe for use so no need to download them.
+    HPG already has Kraken databases availalbe for use so no need to download or build them.
 
     Let's write a script! 
 
