@@ -47,14 +47,14 @@ Let's get started!
     cd metagenomics
     ```
 
-    Make two folders, one for scripts and one for outputs. This will help keep you organized.
+    Make two folders, one for scripts and one for inputs. This will help keep you organized.
 
     ```bash
     mkdir scripts
     mkdir input
     ```
 
-    Copy trimmed reads to input folder
+    At this point you should have trimmed your raw sequencing reads using Trimmomatic so our input will be the trimmed fastq files. Copy trimmed reads to input folder
     ```bash
     cp *.gz input
     ```
@@ -62,7 +62,7 @@ Let's get started!
 3. **Run Kraken2 to classify metagenomic reads**
 
 
-    At this point you should have trimmed your raw sequencing reads using Trimmomatic so our input will be the trimmed fastq files. HPG already has Kraken databases availalbe for use so no need to download them.
+   HPG already has Kraken databases availalbe for use so no need to download them.
 
     Let's write a script! 
 
