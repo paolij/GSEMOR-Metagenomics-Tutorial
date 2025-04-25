@@ -1,4 +1,4 @@
-# UF Genomic Workshop
+# UF GSEMOR Workshop
 # Metagenomic Classification Tutorial
 # Julia Paoli
 **Background**
