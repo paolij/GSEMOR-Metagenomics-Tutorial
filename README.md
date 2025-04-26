@@ -78,8 +78,8 @@ Let's get started!
     #SBATCH --time=24:00:00
     #SBATCH --nodes=1
     #SBATCH --cpus-per-task=1
-    #SBATCH --account=epi
-    #SBATCH --qos=epi-b
+    #SBATCH --account=<your account>
+    #SBATCH --qos=<your qos>
     #SBATCH --mail-user=<username>@ufl.edu
     #SBATCH --mail-type=ALL
     
@@ -112,9 +112,10 @@ Let's get started!
     ```
 
     To submit the job use sbatch. 
-    In the script, we assigned the forward read to the value $1 which is a positional parameter. This is the first command-line argument you will provide when executing the script. The general format for submitting a job is:
+
+    In the script, we assigned the forward read to the value $1 and the reverse read to the value $2. These are positional parameter which describe the order of files you will provide in command-line argument when executing the script. The general format for submitting a job is:
     
-    sbatch script.sh $argument1
+    sbatch script.sh $argument1 $argument2
 
     ```bash
     sbatch kraken2.sh 6_S6_L001.fwd_p.fq.gz 6_S6_L001.rv_p.fq.gz
@@ -141,31 +142,31 @@ Let's get started!
     #SBATCH --time=24:00:00
     #SBATCH --nodes=1
     #SBATCH --cpus-per-task=1
-    #SBATCH --account=epi
-    #SBATCH --qos=epi-b
-    #SBATCH --mail-user=paolij20@ufl.edu
+    #SBATCH --account=<your account>
+    #SBATCH --qos=<your qos>
+    #SBATCH --mail-user=<your username>@ufl.edu
     #SBATCH --mail-type=ALL
 
     pwd; hostname; date
 
-    # Creating output directory
+    # Create output directory
     mkdir -p bracken_output
 
-    # Load braken module
+    # Load bracken module
     module load bracken/2.9
 
-    # Directory for Kraken2 database - replace with actual path
+    # Directory for Kraken2 database
     KRAKEN_DB_PATH="/data/reference/kraken2/minikraken2_v2_8GB_201904_UPDATE"
 
     #sample
     FWD=$1
     BASE_NAME=$(basename "$FWD" | sed 's/\.[^.]*$//')
 
-    # Run Braken
+    # Run Bracken
     bracken -d $KRAKEN_DB_PATH -i kraken_output/${BASE_NAME}_kraken_report#.out -r 100 -l S -t 10 -o bracken_output/${BASE_NAME}.bracken -w bracken_output/${BASE_NAME}.breport
     ```
 
-    To run the script
+    To run the script pass the forward read as the first argument. We are doing this to extract the basenmame of our sample. 
     ```bash
     sbatch bracken.sh 6_S6_L001.fwd_p.fq.gz
     ```
@@ -185,9 +186,9 @@ Let's get started!
     #SBATCH --time=24:00:00
     #SBATCH --nodes=1
     #SBATCH --cpus-per-task=1
-    #SBATCH --account=epi
-    #SBATCH --qos=epi-b
-    #SBATCH --mail-user=paolij20@ufl.edu
+    #SBATCH --account=<your account>
+    #SBATCH --qos=<your qos>
+    #SBATCH --mail-user=<your username>@ufl.edu
     #SBATCH --mail-type=ALL
     
     # Load required modules
