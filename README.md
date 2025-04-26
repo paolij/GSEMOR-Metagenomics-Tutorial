@@ -1,4 +1,4 @@
-# UF 2026 GSEMOR Workshop
+# UF 2025 GSEMOR Workshop
 # Metagenomic Classification Tutorial
 # Julia Paoli
 
