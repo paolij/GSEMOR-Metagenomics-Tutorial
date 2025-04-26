@@ -232,10 +232,10 @@ nano blast_virus.sh
 #SBATCH --mem=10G
 #SBATCH --time=24:00:00
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=8
-#SBATCH --account=epi
-#SBATCH --qos=epi-b
-#SBATCH --mail-user=paolij20@ufl.edu
+#SBATCH --cpus-per-task=1
+#SBATCH --account=<your account>
+#SBATCH --qos=<your qos>
+#SBATCH --mail-user=<your username>@ufl.edu
 #SBATCH --mail-type=END,FAIL
 
 # Load BLAST module
