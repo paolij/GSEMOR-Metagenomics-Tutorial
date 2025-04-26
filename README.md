@@ -1,4 +1,4 @@
-# UF Genomic Workshop
+# UF GSEMOR Workshop
 # Metagenomic Classification Tutorial
 # Julia Paoli
 
@@ -64,13 +64,13 @@ Let's get started!
 
     HPG already has Kraken databases availalbe for use so no need to download or build them.
 
-    Let's write a script! 
+   Let's write a script! 
 
     ```bash
     nano kraken2.sh
     ```
 
-    You can copy this script and paste to your newly opened file. To save your script do Ctrl + O.
+    You can copy this script and paste it to your newly opened file. To save your script do Ctrl + O.
     ```bash
     #!/bin/bash
     #SBATCH --job-name=KRAKEN2
@@ -85,7 +85,7 @@ Let's get started!
     
     pwd; hostname; date
     
-    # Creating output directory
+    # Create output directory
     mkdir -p kraken_output
     
     # Load Kraken2 module
@@ -95,7 +95,7 @@ Let's get started!
     FWD=$1
     REV=$2
     
-    # Directory for Kraken2 database - replace with actual path
+    # Directory for Kraken2 database
     KRAKEN_DB_PATH="/data/reference/kraken2/minikraken2_v2_8GB_201904_UPDATE"
     
     # Extract the base name of the forward reads file (without path and extension)
@@ -125,9 +125,9 @@ Let's get started!
     squeuemine
     ```
 
-    If you look at the slurm output file you will see a percentage breakdown of reads classified and unclassified
+    If you look at the slurm output file you will see a percentage breakdown of the classified and unclassified reads.
 
-4. **Run Bracken for abundance estimation**
+5. **Run Bracken for abundance estimation**
 
     We will now use the output from Kraken2 as input for Bracken abundance estimation.
 
@@ -171,7 +171,7 @@ Let's get started!
     sbatch bracken.sh 6_S6_L001.fwd_p.fq.gz
     ```
 
-5. **Visualize Microbiome Classification and Abundance**
+6. **Visualize Microbiome Classification and Abundance**
 
     We will now make a Krona plots using the output from Bracken to visualize the microbiome composition of our data in a piechart format.
     
