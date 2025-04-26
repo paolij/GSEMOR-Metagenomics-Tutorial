@@ -65,7 +65,7 @@ Let's get started!
 
    Let's write a script!
 
-   Please remember to update the account, QoS, and email parameters in the script to reflect your own information, I've put in place holders for now.
+   ⚠️ Please remember to update the account, QoS, and email parameters in the script to reflect your own information, I've put in place holders for now.
 
     ```bash
     nano kraken2.sh
