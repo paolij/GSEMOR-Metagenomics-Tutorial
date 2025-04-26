@@ -256,7 +256,7 @@ blastn -db ref_viruses_rep_genomes \
        -outfmt "6 qseqid sacc stitle pident length mismatch gapopen qstart qend sstart send evalue bitscore"
 ```
 
-To run the script pass your fnal contig fasta file generated from MEGAHIT
+To run the script pass your final contig fasta file generated from MEGAHIT as the first argument in command line.
 
 ```bash
 sbatch blast_virus.sh final_contig.fasta
