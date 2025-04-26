@@ -10,8 +10,7 @@ The data we will analyze comes from a surveillance study of ticks collected in M
 
 We will be submitting jobs to the HPG server using SLURM job scripts. For more information on submitting jobs check out this [website](https://help.rc.ufl.edu/doc/HPG_Scheduling). For good computing practices using HPG check [here](https://help.rc.ufl.edu/doc/HPG_Computation). 
 
-⚠️ Warning: Ensure you are not running analyses on login nodes.
-
+⚠️ Warning: Ensure you are not running analyses on login nodes. To avoid this, submit jobs to the scheduler using sbatch command followed by your script.
 
 ### **Kraken Metagenomic Pipeline**
 
@@ -64,7 +63,9 @@ Let's get started!
 
     HPG already has Kraken databases availalbe for use so no need to download or build them.
 
-   Let's write a script! 
+   Let's write a script!
+
+   Please remember to update the account, QoS, and email parameters in the script to reflect your own information, I've put in place holders for now.
 
     ```bash
     nano kraken2.sh
