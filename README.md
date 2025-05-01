@@ -102,9 +102,9 @@ Let's get started!
     # Run Kraken2
     kraken2 --db $KRAKEN_DB_PATH \
             --paired $FWD $REV \
-            --classified-out kraken_output/${BASE_NAME}_classified_seqs.fq \ 
-            --output kraken_output/${BASE_NAME}_kraken_output.out \
-            --report kraken_output/${BASE_NAME}_kraken_report.out \
+            --classified-out kraken_output/${BASE_NAME}_classified_seqs#.fq \ 
+            --output kraken_output/${BASE_NAME}_kraken_output#.out \
+            --report kraken_output/${BASE_NAME}_kraken_report#.out \
             --threads 8 \
             --minimum-hit-groups 3
     ```
