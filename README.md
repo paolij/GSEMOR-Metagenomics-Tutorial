@@ -48,19 +48,6 @@ Let's get started!
     cd metagenomics
     ```
 
-    Make two folders, one for scripts and one for inputs. This will help keep you organized.
-
-    ```bash
-    mkdir scripts
-    mkdir input
-    ```
-
-   We will retrieve trimmed sequence reads from the shared workshop folder and copy them into your metagenomics folder.
-   
-    ```bash
-    cp /blue/general_workshop/share/metagenomics/*.gz /blue/general_workshop/<your_folder>/metagenomics/input
-    ```
-
 4. **Run Kraken2 to classify metagenomic reads**
 
 
@@ -122,8 +109,10 @@ Let's get started!
     
     sbatch script.sh $argument1 $argument2
 
+   We will use the trimmed sequence read files in the shared workshop folder as input for Kraken2. We can indicate the path of files for input in the script:
+
     ```bash
-    sbatch kraken2.sh 6_S6_L001.fwd_p.fq.gz 6_S6_L001.rv_p.fq.gz
+    sbatch kraken2.sh /blue/general_workshop/share/metagenomics/6_S6_L001.fwd_p.fq.gz /blue/general_workshop/share/metagenomics/6_S6_L001.rv_p.fq.gz
     ```
     To check on the status of your job
     ```bash
@@ -132,7 +121,7 @@ Let's get started!
 
     If you look at the slurm output file you will see a percentage breakdown of the classified and unclassified reads.
 
-5. **Run Bracken for abundance estimation**
+6. **Run Bracken for abundance estimation**
 
     We will now use the output from Kraken2 as input for Bracken abundance estimation.
 
@@ -176,7 +165,7 @@ Let's get started!
     sbatch bracken.sh 6_S6_L001.fwd_p.fq.gz
     ```
 
-6. **Visualize Microbiome Classification and Abundance**
+7. **Visualize Microbiome Classification and Abundance**
 
     We will now make a Krona plots using the output from Bracken to visualize the microbiome composition of our data in a piechart format.
     
@@ -264,7 +253,7 @@ blastn -db ref_viruses_rep_genomes \
 To run the script pass your final contig fasta file generated from MEGAHIT as the first argument in command line.
 
 ```bash
-sbatch blast_virus.sh final_contig.fasta
+sbatch blast_virus.sh /blue/general_workshop/share/metagenomics/6_S6_L001_final.contigs.fa
 ```
 
 Now you can download the text file generated to look at your BLAST hits. 
