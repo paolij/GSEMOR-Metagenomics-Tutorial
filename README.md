@@ -37,8 +37,10 @@ Let's get started!
     Navigate to the workshop directory in the blue server
 
     ```bash
-    cd /blue/general_workshop/
+    cd /blue/general_workshop
     ```
+
+    Navigate to your folder in the workshop directory using the command *cd*. If you haven't made one yet, please take the opportunity to do so now using the command *mkdir <your_name>*.
 
     Make a folder for metagenomics and go into newly created folder
     ```bash
@@ -53,12 +55,14 @@ Let's get started!
     mkdir input
     ```
 
-    At this point you should have trimmed your raw sequencing reads using Trimmomatic so our input will be the trimmed fastq files.
+   At this point you should have trimmed your raw sequencing reads using Trimmomatic so our input will be the trimmed fastq files.
+
+   We will retrieve trimmed sequence reads from the shared workshop folder and copy them into your metagenomics folder. 
     ```bash
     cp *.gz input
     ```
 
-3. **Run Kraken2 to classify metagenomic reads**
+4. **Run Kraken2 to classify metagenomic reads**
 
 
     HPG already has Kraken databases availalbe for use so no need to download or build them.
