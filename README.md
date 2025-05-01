@@ -95,9 +95,9 @@ Let's get started!
     # Run Kraken2
     kraken2 --db $KRAKEN_DB_PATH \
             --paired $FWD $REV \
-            --classified-out kraken_output/${BASE_NAME}_classified_seqs#.fq \
-            --output kraken_output/${BASE_NAME}_kraken_output#.out \
-            --report kraken_output/${BASE_NAME}_kraken_report#.out \
+            --classified-out kraken_output/${BASE_NAME}_classified_seqs.fq \ 
+            --output kraken_output/${BASE_NAME}_kraken_output.out \
+            --report kraken_output/${BASE_NAME}_kraken_report.out \
             --threads 8 \
             --minimum-hit-groups 3
     ```
@@ -157,7 +157,7 @@ Let's get started!
     BASE_NAME=$(basename "$FWD" | sed 's/\.[^.]*$//')
 
     # Run Bracken
-    bracken -d $KRAKEN_DB_PATH -i kraken_output/${BASE_NAME}_kraken_report#.out -r 100 -l S -t 10 -o bracken_output/${BASE_NAME}.bracken -w bracken_output/${BASE_NAME}.breport
+    bracken -d $KRAKEN_DB_PATH -i kraken_output/${BASE_NAME}_kraken_report.out -r 100 -l S -t 10 -o bracken_output/${BASE_NAME}.bracken -w bracken_output/${BASE_NAME}.breport
     ```
 
     To run the script pass the forward read as the first argument. We are doing this to extract the basenmame of our sample. 
