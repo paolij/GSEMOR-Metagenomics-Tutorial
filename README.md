@@ -34,10 +34,10 @@ Let's get started!
 
 2. **Set up your folders**
     
-    Navigate to your directory for the workshop in the blue server
+    Navigate to the workshop directory in the blue server
 
     ```bash
-    cd /blue/Genomic_Workshop
+    cd /blue/general_workshop/
     ```
 
     Make a folder for metagenomics and go into newly created folder
