@@ -97,7 +97,7 @@ Let's get started!
     KRAKEN_DB_PATH="/data/reference/kraken2/minikraken2_v2_8GB_201904_UPDATE"
     
     # Extract the base name of the forward reads file (without path and extension)
-    BASE_NAME=$(basename "$FWD" | sed 's/\.[^.]*$//')
+    BASE_NAME=$(basename "$FWD" | sed 's/\..*//')
     
     # Run Kraken2
     kraken2 --db $KRAKEN_DB_PATH \
