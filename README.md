@@ -58,13 +58,13 @@ Let's get started!
    We will retrieve trimmed sequence reads from the shared workshop folder and copy them into your metagenomics folder.
    
     ```bash
-    cp /blue/general_workshop/share/metagenomics/*.gz /blue/<your_folder>/metagenomics/input
+    cp /blue/general_workshop/share/metagenomics/*.gz /blue/general_workshop/<your_folder>/metagenomics/input
     ```
 
 4. **Run Kraken2 to classify metagenomic reads**
 
 
-    HPG already has Kraken databases availalbe for use so no need to download or build them.
+   HPG already has Kraken databases availalbe for use so no need to download or build them.
 
    Let's write a script!
 
@@ -117,7 +117,8 @@ Let's get started!
 
     To submit the job use sbatch. 
 
-    In the script, we assigned the forward read to the value $1 and the reverse read to the value $2. These are positional parameter which describe the order of files you will provide in command-line argument when executing the script. The general format for submitting a job is:
+    In the script, we assigned the forward read to the value $1 and the reverse read to the value $2. These are positional parameter which describe the order of files you will 
+    provide in command-line argument when executing the script. The general format for submitting a job is:
     
     sbatch script.sh $argument1 $argument2
 
