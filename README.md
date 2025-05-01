@@ -42,6 +42,10 @@ Let's get started!
 
     Navigate to your folder in the workshop directory using the command *cd*. If you haven't made one yet, please take the opportunity to do so now using the command *mkdir <your_name>*.
 
+   ```bash
+   cd <your_folder>
+   ```
+
     Make a folder for metagenomics and go into newly created folder
     ```bash
     mkdir metagenomics
