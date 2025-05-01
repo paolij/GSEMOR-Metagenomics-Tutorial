@@ -4,9 +4,9 @@
 
 ### **Background**
 
-In this section on metagenomics for pathogen identification, we will investigate the viral and bacterial species present in sequencing data. This is an important initial step in an outbreak scenario to identify and characterize which pathogens are present in your samples. 
+In this section on metagenomics for pathogen identification, we will investigate the viral and bacterial species present in sequencing data. This is an important initial step in an outbreak scenario to identify and characterize the pathogens present in your samples. 
 
-The data we will analyze comes from a surveillance study of ticks collected in Mongolia. We collected *I. persulcatus* ticks (n = 1300) in May 2020. Viral RNA was extracted from cell cultures, converted to cDNA, and library prepped. We conducted whole-genome shotgun sequencing on the Illumina iSeq100 platform. To read more about this study the paper is [here](https://www.mdpi.com/2076-0817/13/12/1086).
+The data we will analyze comes from a surveillance study of ticks collected in Mongolia. We collected *I. persulcatus* ticks (n = 1300) in May 2020. Viral RNA was extracted from cell cultures, converted to cDNA, and library prepped. We conducted whole-genome shotgun sequencing on the Illumina iSeq100 platform. To read more about this study, see the paper [here](https://www.mdpi.com/2076-0817/13/12/1086).
 
 We will be submitting jobs to the HPG server using SLURM job scripts. For more information on submitting jobs check out this [website](https://help.rc.ufl.edu/doc/HPG_Scheduling). For good computing practices using HPG check [here](https://help.rc.ufl.edu/doc/HPG_Computation). 
 
@@ -16,7 +16,7 @@ We will be submitting jobs to the HPG server using SLURM job scripts. For more i
 
 First, we will use the Kraken suite to classify, quantify, and visualize our metagenomic dataset following the steps outlined in [this paper](https://www.nature.com/articles/s41596-022-00738-y).
 
-1. Taxonomic classificiation: Kraken2
+1. Taxonomic classification: Kraken2
 2. Abundance Calculation: Bracken
 3. Microbiome visualization: KrakenTools
 
@@ -51,7 +51,7 @@ Let's get started!
 4. **Run Kraken2 to classify metagenomic reads**
 
 
-   HPG already has Kraken databases availalbe for use so no need to download or build them.
+   HPG already has Kraken databases available for use so no need to download or build them.
 
    Let's write a script!
 
@@ -104,8 +104,7 @@ Let's get started!
 
     To submit the job use sbatch. 
 
-    In the script, we assigned the forward read to the value $1 and the reverse read to the value $2. These are positional parameter which describe the order of files you will 
-    provide in command-line argument when executing the script. The general format for submitting a job is:
+    In the script, we assigned the forward read to the value $1 and the reverse read to the value $2. These are positional parameters that specify the order of files you provide as     command-line arguments. The general format for submitting a job is:
     
     sbatch script.sh $argument1 $argument2
 
@@ -160,14 +159,14 @@ Let's get started!
     bracken -d $KRAKEN_DB_PATH -i kraken_output/${BASE_NAME}_kraken_report.out -r 100 -l S -t 10 -o bracken_output/${BASE_NAME}.bracken -w bracken_output/${BASE_NAME}.breport
     ```
 
-    To run the script pass the forward read as the first argument. We are doing this to extract the basenmame of our sample. 
+    To run the script pass the forward read as the first argument. We are doing this to extract the basename of our sample. 
     ```bash
     sbatch bracken.sh 6_S6_L001.fwd_p.fq.gz
     ```
 
 7. **Visualize Microbiome Classification and Abundance**
 
-    We will now make a Krona plots using the output from Bracken to visualize the microbiome composition of our data in a piechart format.
+    We will now make Krona plots using the output from Bracken to visualize the microbiome composition of our data in pie chart format.
     
     ```bash
     nano krona_plot.sh
@@ -259,7 +258,7 @@ sbatch blast_virus.sh /blue/general_workshop/share/metagenomics/6_S6_L001_final.
 Now you can download the text file generated to look at your BLAST hits. 
 To assess quality of the BLAST hits you can assess:
 
-1. ***Evalue***: the closer to 0 the bette quality the match. BLAST E-value is the number of expected hits of similar quality that could be found just by chance.
+1. ***Evalue***: the closer to 0 the better the quality of the match. BLAST E-value is the number of expected hits of similar quality that could be found just by chance.
 
 2. ***Percent Identity***: the closer the value to 100% the more similar your query sequence is to the BLAST hit. Calculated by dividing the number of identical nucleotide matches in an alignment by the length of the alignment.
 
