@@ -55,11 +55,10 @@ Let's get started!
     mkdir input
     ```
 
-   At this point you should have trimmed your raw sequencing reads using Trimmomatic so our input will be the trimmed fastq files.
-
-   We will retrieve trimmed sequence reads from the shared workshop folder and copy them into your metagenomics folder. 
+   We will retrieve trimmed sequence reads from the shared workshop folder and copy them into your metagenomics folder.
+   
     ```bash
-    cp *.gz input
+    cp /blue/general_workshop/share/metagenomics/*.gz /blue/<your_folder>/metagenomics/input
     ```
 
 4. **Run Kraken2 to classify metagenomic reads**
