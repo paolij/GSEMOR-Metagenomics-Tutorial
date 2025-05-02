@@ -221,7 +221,7 @@ Let's get started!
     sbatch krona_plot.sh /blue/general_workshop/share/metagenomics/6_S6_L001.fwd_p.fq.gz
     ```
     
-    To view the plot, download the html file and open in your internet browser.
+    To view the plot, download the html file using your preffered file transfer system and open in your internet browser.
    
 
 **BLAST Metagenomic Pipeline**
