@@ -211,7 +211,8 @@ Let's get started!
     # Create Krona HTML plot
     ktImportText b_krona_txt/${BASE_NAME}.b.krona.txt -o krona_html/${BASE_NAME}.krona.html
     ```
-To view the plot, download the html file and open in your internet browser.
+
+    To view the plot, download the html file and open in your internet browser.
 
 **BLAST Metagenomic Pipeline**
 
