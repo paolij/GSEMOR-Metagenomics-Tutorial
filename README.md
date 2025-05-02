@@ -160,7 +160,7 @@ Let's get started!
     # Directory for Kraken2 database
     KRAKEN_DB_PATH="/data/reference/kraken2/minikraken2_v2_8GB_201904_UPDATE"
 
-    # Sample
+    # Sample Input Argument
     FWD=$1
     
      # Extract the base name of the forward reads file (without path and extension)
@@ -199,9 +199,11 @@ Let's get started!
     module load krona/20161019
     module load krakentools
     
-    # Input and output setup
+    # Sample Input Argument
     FWD=$1
-    BASE_NAME=$(basename "$FWD" | sed 's/\.[^.]*$//')
+
+    # Extract the base name of the forward reads file (without path and extension)
+    BASE_NAME=$(basename "$FWD" | sed 's/\..*//')
     
     # Create output directories
     mkdir -p b_krona_txt
