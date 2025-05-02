@@ -172,7 +172,7 @@ Let's get started!
 
     To run the script pass the forward read as the first argument. We are doing this to extract the basename of our sample. 
     ```bash
-    sbatch bracken.sh 6_S6_L001.fwd_p.fq.gz
+    sbatch bracken.sh /blue/general_workshop/share/metagenomics/6_S6_L001.fwd_p.fq.gz
     ```
 
 7. **Visualize Microbiome Classification and Abundance**
