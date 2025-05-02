@@ -160,9 +160,11 @@ Let's get started!
     # Directory for Kraken2 database
     KRAKEN_DB_PATH="/data/reference/kraken2/minikraken2_v2_8GB_201904_UPDATE"
 
-    #sample
+    # Sample
     FWD=$1
-    BASE_NAME=$(basename "$FWD" | sed 's/\.[^.]*$//')
+    
+     # Extract the base name of the forward reads file (without path and extension)
+    BASE_NAME=$(basename "$FWD" | sed 's/\..*//')
 
     # Run Bracken
     bracken -d $KRAKEN_DB_PATH -i kraken_output/${BASE_NAME}_kraken_report.out -r 100 -l S -t 10 -o bracken_output/${BASE_NAME}.bracken -w bracken_output/${BASE_NAME}.breport
