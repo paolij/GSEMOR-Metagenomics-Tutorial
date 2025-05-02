@@ -63,7 +63,7 @@ Let's get started!
 
    ⚠️ Please remember to update the account, QoS, and email parameters in the script to reflect your own information, I've put in place holders for now.
    
-   ⚠️ When running paired reads with Kraken2, make sure to keep the # symbol in the classified-out, output, and report options for proper handling of paired data
+   ⚠️ When running paired reads with Kraken2, make sure to keep the # symbol in the classified-out option for proper handling of paired data
    
     ```bash
     nano kraken2.sh
@@ -105,8 +105,8 @@ Let's get started!
     kraken2 --db $KRAKEN_DB_PATH \
             --paired $FWD $REV \
             --classified-out kraken_output/${BASE_NAME}_classified_seqs#.fq \
-            --output kraken_output/${BASE_NAME}_kraken_output#.out \
-            --report kraken_output/${BASE_NAME}_kraken_report#.out \
+            --output kraken_output/${BASE_NAME}_kraken_output.out \
+            --report kraken_output/${BASE_NAME}_kraken_report.out \
             --threads 8 \
             --minimum-hit-groups 3
     ```
