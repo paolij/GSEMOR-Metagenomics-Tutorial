@@ -210,7 +210,7 @@ Let's get started!
     mkdir -p krona_html
     
     # Generate Krona input from bracken report
-    python kreport2krona.py -r bracken_output/${BASE_NAME}.breport -o b_krona_txt/${BASE_NAME}.b.krona.txt --no-intermediate-ranks
+    python /blue/general_workshop/share/metagenomics/kreport2krona.py -r bracken_output/${BASE_NAME}.breport -o b_krona_txt/${BASE_NAME}.b.krona.txt --no-intermediate-ranks
     
     # Create Krona HTML plot
     ktImportText b_krona_txt/${BASE_NAME}.b.krona.txt -o krona_html/${BASE_NAME}.krona.html
