@@ -82,10 +82,10 @@ Let's get started!
     #SBATCH --mail-type=ALL
     
     pwd; hostname; date
-    
+
     # Create output directory
     mkdir -p kraken_output
-    
+
     # Load Kraken2 module
     module load kraken/2.1.3
     
@@ -102,7 +102,7 @@ Let's get started!
     # Run Kraken2
     kraken2 --db $KRAKEN_DB_PATH \
             --paired $FWD $REV \
-            --classified-out kraken_output/${BASE_NAME}_classified_seqs#.fq \ 
+            --classified-out kraken_output/${BASE_NAME}_classified_seqs#.fq \
             --output kraken_output/${BASE_NAME}_kraken_output#.out \
             --report kraken_output/${BASE_NAME}_kraken_report#.out \
             --threads 8 \
