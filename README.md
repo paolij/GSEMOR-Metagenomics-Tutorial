@@ -78,9 +78,9 @@ Let's get started!
     #SBATCH --time=24:00:00
     #SBATCH --nodes=1
     #SBATCH --cpus-per-task=1
-    #SBATCH --account=<your account>
-    #SBATCH --qos=<your qos>
-    #SBATCH --mail-user=<username>@ufl.edu
+    #SBATCH --account=general_workshop
+    #SBATCH --qos=general_workshop
+    #SBATCH --mail-user=<username>@ufl.edu #put in your email
     #SBATCH --mail-type=ALL
     
     pwd; hostname; date
@@ -144,9 +144,9 @@ Let's get started!
     #SBATCH --time=24:00:00
     #SBATCH --nodes=1
     #SBATCH --cpus-per-task=1
-    #SBATCH --account=<your account>
-    #SBATCH --qos=<your qos>
-    #SBATCH --mail-user=<your username>@ufl.edu
+    #SBATCH --account=general_workshop
+    #SBATCH --qos=general_workshop
+    #SBATCH --mail-user=<your username>@ufl.edu #put in your email
     #SBATCH --mail-type=ALL
 
     pwd; hostname; date
@@ -190,9 +190,9 @@ Let's get started!
     #SBATCH --time=24:00:00
     #SBATCH --nodes=1
     #SBATCH --cpus-per-task=1
-    #SBATCH --account=<your account>
-    #SBATCH --qos=<your qos>
-    #SBATCH --mail-user=<your username>@ufl.edu
+    #SBATCH --account=general_workshop
+    #SBATCH --qos=general_workshop
+    #SBATCH --mail-user=<your username>@ufl.edu #change your email
     #SBATCH --mail-type=ALL
     
     # Load required modules
@@ -246,8 +246,8 @@ nano blast_virus.sh
 #SBATCH --time=24:00:00
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=1
-#SBATCH --account=<your account>
-#SBATCH --qos=<your qos>
+#SBATCH --account=general_workshop
+#SBATCH --qos=general_workshop
 #SBATCH --mail-user=<your username>@ufl.edu
 #SBATCH --mail-type=END,FAIL
 
