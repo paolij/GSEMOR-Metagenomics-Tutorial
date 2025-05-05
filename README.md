@@ -61,7 +61,7 @@ Let's get started!
 
    Let's write a script!
 
-   ⚠️ Please remember to update the account, QoS, and email parameters in the script to reflect your own information, I've put in place holders for now.
+   ⚠️ Please remember to update the email parameter in the script to reflect your own information, I've put in place holders for now.
    
    ⚠️ When running paired reads with Kraken2, make sure to keep the # symbol in the classified-out option for proper handling of paired data
    
